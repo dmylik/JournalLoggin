@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+    <display-name>WebF</display-name>
+
+    <context-param>
+        <param-name>sqlConnectionString</param-name>
+        <param-value>jdbc:oracle:thin:@10.3.0.9:1521:bivc</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sqlPassword</param-name>
+        <param-value>8.kx1zmm</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sqlSchema</param-name>
+        <param-value>report</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sqlUserName</param-name>
+        <param-value>report</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>sqlConnectionString_priv</param-name>
+        <param-value>jdbc:oracle:thin:@10.3.0.54:1521:bivc</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sqlPassword_priv</param-name>
+        <param-value>raider</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sqlSchema_priv</param-name>
+        <param-value>ra</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sqlUserName_priv</param-name>
+        <param-value>ra</param-value>
+    </context-param>
+
+<!--    <filter>-->
+<!--        <filter-name>Privilege</filter-name>-->
+<!--        <display-name>Privilege</display-name>-->
+<!--        <filter-class>report.privilege</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>Privilege</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>application</param-name>
+            <param-value>ApplicationResources</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>dwlFile</servlet-name>
+        <servlet-class>table.downlandFile</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>dateCreate</servlet-name>
+        <servlet-class>table.dateCreate</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dwlFile</servlet-name>
+        <url-pattern>/dwlFile</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dateCreate</servlet-name>
+        <url-pattern>/dateCreate</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+        <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+        <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+        <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+        <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+    </taglib>
+<!--    <security-constraint>-->
+<!--        <display-name>journal</display-name>-->
+<!--        <web-resource-collection>-->
+<!--            <web-resource-name>Collection_</web-resource-name>-->
+<!--            <url-pattern>/*</url-pattern>-->
+<!--            <url-pattern>/js/*</url-pattern>-->
+<!--            <http-method>GET</http-method>-->
+<!--            <http-method>POST</http-method>-->
+<!--        </web-resource-collection>-->
+<!--        <auth-constraint>-->
+<!--            <role-name>journal</role-name>-->
+<!--        </auth-constraint>-->
+<!--        <user-data-constraint>-->
+<!--            <transport-guarantee>NONE</transport-guarantee>-->
+<!--        </user-data-constraint>-->
+<!--    </security-constraint>-->
+<!--    <login-config>-->
+<!--        <auth-method>BASIC</auth-method>-->
+<!--        <realm-name>journal</realm-name>-->
+<!--    </login-config>-->
+<!--    <security-role>-->
+<!--        <role-name>journal</role-name>-->
+<!--    </security-role>-->
+
+</web-app>

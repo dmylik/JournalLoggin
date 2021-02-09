@@ -1,0 +1,40 @@
+div {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    width: 100%;
+    height: 40px;
+    margin: 5px 0 5px 0;
+}
+
+div:hover {
+    background-color: #00a5ba;
+    color: white;
+}
+
+div:active {
+    background-color: #0e8aba;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+b {
+    /*text-shadow:#cccccc -17px -8px 6px;*/
+    /*font-size: 26px;*/
+    /*color:#000;*/
+}
+
+.link {
+    width: 100%; /* Ширина слоя */
+    height: 40px; /* Высота слоя */
+    background: #00a4ff; /* Цвет фона */
+}
+.link a {
+    display: block; /* Ссылка как блочный элемент */
+    align: center;  /* Выравнивание по центру */
+    height: 100%; /* Высота на весь слой */
+    color: #666; /* Цвет ссылки */
+}

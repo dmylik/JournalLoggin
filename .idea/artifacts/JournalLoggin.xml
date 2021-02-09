@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JournalLoggin">
+    <output-path>$PROJECT_DIR$/out/artifacts/JournalLoggin</output-path>
+    <root id="archive" name="JournalLoggin.war">
+      <element id="artifact" artifact-name="JournalLoggin:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="antlr" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

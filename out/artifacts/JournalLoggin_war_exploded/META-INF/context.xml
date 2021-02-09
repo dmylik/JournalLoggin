@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <Realm className="org.apache.catalina.realm.JDBCRealm"
+           connectionName="ra"
+           connectionPassword="raider"
+           connectionURL="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.3.0.54)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=bivc.brest.rw)))"
+           digest="MD5"
+           driverName="oracle.jdbc.OracleDriver"
+           roleNameCol="rn"
+           userCredCol="ps"
+           userNameCol="un"
+           userRoleTable="roles"
+           userTable="usrsh"/>
+</Context>
